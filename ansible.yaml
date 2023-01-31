@@ -1,7 +1,7 @@
 ---
 - name: installing apache2
   become: yes
-  hosts: all
+  hosts: localhost
   tasks:
     - name: install apache and update packages
       ansible.builtin.apt:
