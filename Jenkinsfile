@@ -1,12 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage ('ansible') {
+        stage ('terraform') {
             steps {
-                sh 'cd /etc/ansible'
-                sh 'export ANSIBLE_HOST_KEY_CHECKING=False'
-                sh 'ansible -i hosts -m ping -k all'
-                sh 'ansible-playbook -i hosts ansible.yaml'
+                sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform apply --auto-approve'
             }
         }
     }
