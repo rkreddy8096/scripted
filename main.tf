@@ -11,8 +11,7 @@ resource "null_resource" "webprovisoner" {
 
       inline = [
         "sudo apt update",
-        "sudo apt install apache2 -y",
-        "ok"
+        "sudo apt install apache2 -y"
        ]
     }
 }
